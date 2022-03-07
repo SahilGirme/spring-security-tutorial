@@ -1,6 +1,6 @@
-package com.coderspark.springsecurityclient.repository;
+package com.coderspark.client.repository;
 
-import com.coderspark.springsecurityclient.entity.User;
+import com.coderspark.client.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<User,Long> {

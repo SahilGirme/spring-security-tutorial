@@ -1,6 +1,6 @@
-package com.coderspark.springsecurityclient.event;
+package com.coderspark.client.event;
 
-import com.coderspark.springsecurityclient.entity.User;
+import com.coderspark.client.entity.User;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.context.ApplicationEvent;

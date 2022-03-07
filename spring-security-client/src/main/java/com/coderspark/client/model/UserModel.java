@@ -1,4 +1,4 @@
-package com.coderspark.springsecurityclient.model;
+package com.coderspark.client.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

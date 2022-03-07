@@ -1,4 +1,4 @@
-package com.coderspark.springsecurityclient.entity;
+package com.coderspark.client.entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,13 +8,11 @@ import java.util.Calendar;
 import java.util.Date;
 
 @Entity
-@Data
 @NoArgsConstructor
 public class VerificationToken {
     //ExpirationTime IS 10 minutes
     private static final int EXPIRATION_TIME = 10;
     @Id
-    @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -48,5 +46,35 @@ public class VerificationToken {
         return new Date(calendar.getTime().getTime());
     }
 
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public Date getExpirationTime() {
+        return expirationTime;
+    }
+
+    public void setExpirationTime(Date expirationTime) {
+        this.expirationTime = expirationTime;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 }

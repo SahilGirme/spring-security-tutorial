@@ -1,9 +1,10 @@
-package com.coderspark.springsecurityclient.service;
+package com.coderspark.client.service;
 
-import com.coderspark.springsecurityclient.entity.User;
-import com.coderspark.springsecurityclient.entity.VerificationToken;
-import com.coderspark.springsecurityclient.model.UserModel;
-import com.coderspark.springsecurityclient.repository.UserRepository;
+import com.coderspark.client.entity.User;
+import com.coderspark.client.entity.VerificationToken;
+import com.coderspark.client.model.UserModel;
+import com.coderspark.client.repository.VerificationTokenRepository;
+import com.coderspark.client.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,9 @@ public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
     @Autowired
     private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private VerificationTokenRepository verificationTokenRepository;
 
     @Override
     public User registerUser(UserModel userModel) {
@@ -32,6 +36,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void saveVerificationTokenForUser(String token, User user) {
-//        VerificationToken  verificationToken = new
+        VerificationToken verificationToken = new VerificationToken(user,token);
+
+        verificationTokenRepository.save(verificationToken);
     }
 }
