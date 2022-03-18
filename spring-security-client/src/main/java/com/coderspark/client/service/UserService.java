@@ -2,6 +2,7 @@ package com.coderspark.client.service;
 
 
 import com.coderspark.client.entity.User;
+import com.coderspark.client.entity.VerificationToken;
 import com.coderspark.client.model.UserModel;
 
 public interface UserService {
@@ -10,4 +11,6 @@ public interface UserService {
     void saveVerificationTokenForUser(String token, User user);
 
     String validateVerificationToken(String token);
+
+    VerificationToken generateNewVerificationToken(String oldToken);
 }
